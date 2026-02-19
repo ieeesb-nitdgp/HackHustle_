@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import Image from "next/image";
+import Image, { StaticImageData } from "next/image";
 import { FiLinkedin, FiGithub } from "react-icons/fi";
 import { judges } from "../public/judges";
 import BlurText from "@/components/BlurText";
@@ -48,7 +48,7 @@ export default function Judges() {
 
 interface Judge {
   name: string;
-  image: string;
+  image: string | StaticImageData;
   role: string;
   linkedin: string;
   github: string;

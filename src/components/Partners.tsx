@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import Image from "next/image";
+import Image, { StaticImageData } from "next/image";
 import { partners } from "../public/partners";
 import BlurText from "@/components/BlurText";
 
@@ -79,7 +79,7 @@ export default function Partners() {
 }
 
 // Sub-component for individual logo cards to keep things clean
-function PartnerCard({ partner }: { partner: { logo: string; name: string } }) {
+function PartnerCard({ partner }: { partner: { logo: string | StaticImageData; name: string } }) {
   return (
     <div className="relative group/card flex-shrink-0">
       {/* Card Border Glow Effect */}
