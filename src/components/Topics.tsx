@@ -1,7 +1,7 @@
 "use client";
 
 import { motion, useScroll, useTransform } from "framer-motion";
-import { useRef, useState } from "react";
+import { useRef } from "react";
 import { topics } from "@/public/topics";
 import BlurText from "@/components/BlurText";
 
@@ -62,7 +62,13 @@ export default function Topics() {
 
 /* --- Interactive Topic Module --- */
 
-function TopicModule({ topic, index }: { topic: any; index: number }) {
+interface Topic {
+  title: string;
+  description: string;
+  icon: React.ElementType;
+}
+
+function TopicModule({ topic, index }: { topic: Topic; index: number }) {
   return (
     <motion.div
       initial={{ opacity: 0, y: 30 }}

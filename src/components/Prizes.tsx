@@ -1,10 +1,10 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { prizes } from "../public/prizes";
 import BlurText from "@/components/BlurText";
-import { Trophy, Star, Award, Zap } from "lucide-react";
+import { Zap } from "lucide-react";
 
 export default function Prizes() {
   return (
@@ -45,7 +45,14 @@ export default function Prizes() {
 
 /* --- Interactive Prize Tier Component --- */
 
-function PrizeTier({ prize, index }: { prize: any; index: number }) {
+interface Prize {
+  title: string;
+  amount: string;
+  benefits: string[];
+  icon: React.ElementType;
+}
+
+function PrizeTier({ prize, index }: { prize: Prize; index: number }) {
   // Metallic styling logic based on index
   const styles = [
     { border: "border-yellow-500/50", glow: "shadow-yellow-500/20", text: "text-yellow-500", label: "Grand Winner", height: "md:h-[500px]" },

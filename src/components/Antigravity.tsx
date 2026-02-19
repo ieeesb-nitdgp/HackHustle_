@@ -23,7 +23,16 @@ interface MouseState {
     radius: number;
 }
 
-const AntiGravityBackground: React.FC<{ className?: string }> = (props) => {
+interface AntiGravityProps {
+    className?: string;
+    count?: number;
+    magnetRadius?: number;
+    color?: string;
+    autoAnimate?: boolean;
+    particleShape?: string;
+}
+
+const AntiGravityBackground: React.FC<AntiGravityProps> = (props) => {
     const canvasRef = useRef<HTMLCanvasElement | null>(null);
 
     // Use a ref for mouse to avoid re-renders but keep values accessible
@@ -50,8 +59,7 @@ const AntiGravityBackground: React.FC<{ className?: string }> = (props) => {
             canvas.width = window.innerWidth * dpr;
             canvas.height = window.innerHeight * dpr;
 
-            canvas.width = window.innerWidth * dpr;
-            canvas.height = window.innerHeight * dpr;
+
 
             // Use CSS for display size
             canvas.style.width = '100%';

@@ -136,7 +136,7 @@ function NavLinks({ mobile, setIsOpen }: { mobile?: boolean; setIsOpen?: (isOpen
           key={link.href}
           href={link.href}
           onMouseEnter={() => !mobile && setHoveredPath(link.href)}
-          onClick={() => mobile && setIsOpen(false)}
+          onClick={() => mobile && setIsOpen && setIsOpen(false)}
           className={`
             relative px-5 py-2 text-sm font-bold transition-all rounded-full outline-none
             ${mobile ? "text-4xl font-black uppercase tracking-tighter text-white" : "text-white/60 hover:text-white"}
