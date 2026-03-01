@@ -1,22 +1,22 @@
-import { Code2, Cpu, Globe } from "lucide-react";
+import { Code2, Cpu, Zap } from "lucide-react";
 
 export const features = [
   {
     icon: Code2,
-    title: "Learn & Build",
+    title: "GenAI Hackathon",
     description:
-      "Get hands-on experience with cutting-edge technologies and build innovative projects.",
-  },
-  {
-    icon: Globe,
-    title: "Network",
-    description:
-      "Connect with fellow developers, mentors, and industry professionals.",
+      "A 24-hour intense building session focused on using Generative AI to solve healthcare and mental health challenges.",
   },
   {
     icon: Cpu,
-    title: "Innovate",
+    title: "PCB Design",
     description:
-      "Transform your ideas into reality and solve real-world problems.",
+      "A specialized track for hardware enthusiasts to design and prototype PCBs for medical and wellness applications.",
+  },
+  {
+    icon: Zap,
+    title: "Rapid Prototyping",
+    description:
+      "Transform your innovative ideas into working models with mentorship and high-speed development tools.",
   },
 ];

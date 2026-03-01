@@ -66,22 +66,28 @@ function PrizeTier({ prize, index }: { prize: Prize; index: number }) {
       whileInView={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.8, delay: index * 0.1 }}
       viewport={{ once: true }}
-      // Re-orders visual podium (Winner in center for desktop)
-      className={`relative group ${index === 0 ? "md:order-2" : index === 1 ? "md:order-1" : "md:order-3"}`}
+      className={`relative group cursor-crosshair ${index === 0 ? "md:order-2" : index === 1 ? "md:order-1" : "md:order-3"}`}
     >
+      {/* Animated Border Beam */}
+      <div className={`absolute inset-0 rounded-[2.5rem] border ${styles.border} group-hover:border-white/40 transition-colors duration-500`} />
+
+      {/* Glow Effect */}
+      <div className={`absolute -inset-1 rounded-[2.5rem] blur-2xl opacity-0 group-hover:opacity-20 transition duration-700 bg-gradient-to-r ${index === 0 ? "from-yellow-400 to-yellow-600" : index === 1 ? "from-slate-300 to-slate-500" : "from-amber-600 to-amber-800"}`} />
+
       <div className={`
-        relative flex flex-col justify-between p-8 rounded-[2.5rem] 
-        bg-white/[0.03] border backdrop-blur-xl transition-all duration-500 
-        group-hover:-translate-y-4 group-hover:bg-white/[0.07]
-        ${styles.border} ${styles.glow} ${styles.height}
+        relative h-full flex flex-col justify-between p-8 rounded-[2.5rem] 
+        bg-white/[0.02] backdrop-blur-3xl overflow-hidden transition-all duration-500 
+        ${styles.height}
       `}>
+        {/* Background Decorative "Noise" */}
+        <div className="absolute inset-0 opacity-[0.03] mix-blend-overlay pointer-events-none bg-[url('https://grainy-gradients.vercel.app/noise.svg')]" />
 
         {/* Badge Label */}
-        <div className={`absolute -top-4 left-1/2 -translate-x-1/2 px-4 py-1 rounded-full text-[10px] font-black uppercase tracking-widest border bg-black z-20 ${styles.border} ${styles.text}`}>
+        <div className={`absolute -top-4 left-1/2 -translate-x-1/2 px-4 py-1 rounded-full text-[10px] font-black uppercase tracking-[0.2em] border bg-black z-20 ${styles.border} ${styles.text}`}>
           {styles.label}
         </div>
 
-        <div className="relative z-10">
+        <div className="relative z-10 pt-4">
           <CardHeader className="p-0 mb-6 text-center">
             <div className={`mb-4 mx-auto p-4 rounded-2xl bg-white/5 inline-block ${styles.text} group-hover:scale-110 transition-transform duration-500`}>
               <prize.icon size={48} strokeWidth={1.5} />
@@ -97,7 +103,7 @@ function PrizeTier({ prize, index }: { prize: Prize; index: number }) {
             </p>
             <ul className="space-y-3 text-left">
               {prize.benefits.map((benefit: string, i: number) => (
-                <li key={i} className="flex items-center gap-3 text-sm text-gray-400">
+                <li key={i} className="flex items-center gap-3 text-sm text-gray-400 font-medium">
                   <Zap size={14} className={styles.text} />
                   {benefit}
                 </li>
@@ -106,8 +112,27 @@ function PrizeTier({ prize, index }: { prize: Prize; index: number }) {
           </CardContent>
         </div>
 
-        {/* Decorative Gloss */}
-        <div className="absolute inset-0 bg-gradient-to-tr from-transparent via-white/[0.02] to-transparent rounded-[2.5rem] pointer-events-none" />
+        {/* Status Bar Footer */}
+        <div className="relative pt-6 border-t border-white/5 mt-8 flex justify-between items-center z-10">
+          <div className="flex flex-col">
+            <span className="text-[9px] font-bold uppercase tracking-[0.2em] text-gray-500">Asset Value</span>
+            <span className={`text-[11px] font-black uppercase ${styles.text}`}>Secured</span>
+          </div>
+
+          <div className="flex items-center gap-3">
+            <div className="h-1 w-12 bg-white/5 rounded-full overflow-hidden">
+              <motion.div
+                initial={{ x: "-100%" }}
+                whileInView={{ x: "100%" }}
+                transition={{ repeat: Infinity, duration: 2, ease: "linear" }}
+                className={`h-full w-full ${index === 0 ? "bg-yellow-500" : index === 1 ? "bg-slate-400" : "bg-amber-700"}`}
+              />
+            </div>
+          </div>
+        </div>
+
+        {/* Hover Highlight Shard */}
+        <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-bl from-white/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
       </div>
     </motion.div>
   );

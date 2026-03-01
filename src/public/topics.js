@@ -1,46 +1,46 @@
 import {
+  Heart,
   Brain,
-  Shield,
-  HeadsetIcon as VrHeadset,
-  Cpu,
-  ShieldCheck,
+  Activity,
+  Microscope,
+  Stethoscope,
   Lightbulb,
 } from "lucide-react";
 
 export const topics = [
   {
+    icon: Heart,
+    title: "Mental Wellness",
+    description:
+      "Develop digital tools and platforms to support mental health, stress management, and emotional well-being.",
+  },
+  {
     icon: Brain,
-    title: "Artificial Intelligence",
-    description:
-      "Build innovative solutions using machine learning and AI technologies.",
+    title: "Neurotech Solutions",
+    description: "Explore the intersection of neuroscience and technology to create innovative diagnostic or therapeutic tools.",
   },
   {
-    icon: Shield,
-    title: "Cybersecurity",
-    description: "Create solutions for modern security challenges and threats.",
+    icon: Activity,
+    title: "Health Monitoring",
+    description:
+      "Build real-time health tracking systems and wearable tech integrations for proactive healthcare.",
   },
   {
-    icon: VrHeadset,
-    title: "AR/VR",
+    icon: Microscope,
+    title: "Diagnostic Innovation",
     description:
-      "Create immersive experiences using augmented and virtual reality.",
+      "Leverage AI and data science to improve the accuracy and speed of medical diagnosis.",
   },
   {
-    icon: Cpu,
-    title: "IoT & Hardware",
+    icon: Stethoscope,
+    title: "Accessible Healthcare",
     description:
-      "Develop solutions connecting the physical and digital worlds.",
+      "Create solutions that bridge the gap in healthcare accessibility for underserved communities.",
   },
   {
-    icon: ShieldCheck, 
-    title: "Women Safety",
+    icon: Lightbulb,
+    title: "Open Innovation",
     description:
-      "Contribute to a safer world by creating applications and systems that prioritize security and empowerment.",
-  },
-  {
-    icon: Lightbulb, 
-    title: "Student Innovation",
-    description:
-      "Unleash your creativity and build anything that inspires you outside the predefined tracks.",
+      "Unleash your creativity to solve any challenge within the healthcare and mental health ecosystem.",
   },
 ];

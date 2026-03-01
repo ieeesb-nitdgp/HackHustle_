@@ -7,10 +7,9 @@ import Contact from "@/components/Contact";
 import Faqs from "@/components/Faqs";
 import Footer from "@/components/Footer";
 import Header from "@/components/Hero";
-import Judges from "@/components/Judges";
 import Navbar from "@/components/Navbar";
 import Prizes from "@/components/Prizes";
-import Sponsors from "@/components/Partners";
+import Speakers from "@/components/Speakers";
 import Timeline from "@/components/Timeline";
 import Topics from "@/components/Topics";
 import Loader from "@/components/Loader";
@@ -32,15 +31,14 @@ export default function Home() {
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
-          transition={{ duration: 0.5 }}
+          transition={{ duration: 0.91 }}
         >
           <Navbar />
           <Header />
           <About />
           <Topics />
           <Timeline />
-          <Sponsors />
-          <Judges />
+          <Speakers />
           <Prizes />
           <Faqs />
           <Contact />

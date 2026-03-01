@@ -143,14 +143,18 @@ export default function Footer() {
               direction="bottom"
               delay={50}
             />
-            <div className="space-y-4 text-sm text-gray-400">
-              <div className="flex items-start gap-3">
-                <MapPin size={18} className="text-purple-500 shrink-0 mt-0.5" />
-                <span>NIT Durgapur, Mahatma Gandhi Rd, West Bengal 713209</span>
+            <div className="space-y-5 pt-4">
+              <div className="flex items-start gap-4">
+                <div className="p-2 rounded-lg bg-white/5 border border-white/10 text-purple-500">
+                  <MapPin size={18} />
+                </div>
+                <span className="text-gray-400 text-sm leading-tight">Mahatma Gandhi Avenue, Durgapur, West Bengal, India</span>
               </div>
-              <div className="flex items-center gap-3">
-                <Mail size={18} className="text-purple-500 shrink-0" />
-                <a href="mailto:info@hackhustle.com" className="hover:text-white transition-colors">info@hackhustle.com</a>
+              <div className="flex items-center gap-4">
+                <div className="p-2 rounded-lg bg-white/5 border border-white/10 text-purple-500">
+                  <Mail size={18} />
+                </div>
+                <a href="mailto:ieeesb.nitdgp@gmail.com" className="text-gray-400 text-sm hover:text-white transition-colors underline decoration-purple-500/30 underline-offset-4">ieeesb.nitdgp@gmail.com</a>
               </div>
             </div>
           </motion.div>

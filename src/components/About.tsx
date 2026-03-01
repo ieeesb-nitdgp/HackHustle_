@@ -54,7 +54,7 @@ export default function About() {
             className="relative"
           >
             <p className="text-gray-400 max-w-3xl mx-auto text-lg md:text-2xl font-light leading-relaxed">
-              HackHustle isn&apos;t just a competition; it&apos;s a <span className="text-white font-medium">24-hour reality distortion field</span> where the brightest minds converge to build the future.
+              HackHustle presents a dual-track innovation experience: a <span className="text-white font-medium">GenAI Hackathon</span> for intelligence and <span className="text-white font-medium">PCB Design</span> for hardware, converging to revolutionize Healthcare and Mental Health.
             </p>
           </motion.div>
         </div>
@@ -77,59 +77,67 @@ interface Feature {
 }
 
 function FeatureCard({ feature, index }: { feature: Feature; index: number }) {
-  const cardRef = useRef<HTMLDivElement>(null);
-
-  // Spotlight Position
-  const mouseX = useSpring(0, { stiffness: 300, damping: 30 });
-  const mouseY = useSpring(0, { stiffness: 300, damping: 30 });
-
-  function onMouseMove({ currentTarget, clientX, clientY }: React.MouseEvent) {
-    const { left, top } = currentTarget.getBoundingClientRect();
-    mouseX.set(clientX - left);
-    mouseY.set(clientY - top);
-  }
-
   return (
     <motion.div
-      ref={cardRef}
-      onMouseMove={onMouseMove}
-      initial={{ opacity: 0, y: 40 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.8, delay: index * 0.1, ease: [0.16, 1, 0.3, 1] }}
+      initial={{ opacity: 0, scale: 0.9 }}
+      whileInView={{ opacity: 1, scale: 1 }}
+      transition={{ duration: 0.5, delay: index * 0.1 }}
       viewport={{ once: true }}
-      className="group relative p-10 rounded-[32px] bg-white/[0.01] border border-white/5 backdrop-blur-3xl overflow-hidden transition-all duration-500 hover:border-purple-500/40"
+      className="group relative h-full cursor-crosshair"
     >
-      {/* Dynamic Spotlight Glow */}
-      <motion.div
-        className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"
-        style={{
-          background: useTransform(
-            [mouseX, mouseY],
-            ([x, y]) => `radial-gradient(400px circle at ${x}px ${y}px, rgba(168, 85, 247, 0.12), transparent 80%)`
-          ),
-        }}
-      />
+      {/* Animated Border Beam */}
+      <div className="absolute inset-0 rounded-2xl border border-white/10 group-hover:border-purple-500/50 transition-colors duration-500" />
 
-      {/* Content */}
-      <div className="relative z-10 flex flex-col h-full">
-        <div className="mb-8 w-14 h-14 md:w-16 md:h-16 flex items-center justify-center rounded-2xl bg-white/5 border border-white/10 text-purple-400 group-hover:bg-purple-600 group-hover:text-white group-hover:border-purple-500 transition-all duration-500 group-hover:shadow-[0_0_30px_rgba(168,85,247,0.4)]">
-          <feature.icon className="w-6 h-6 md:w-8 md:h-8" />
+      {/* Glow Effect */}
+      <div className="absolute -inset-1 bg-gradient-to-r from-purple-600 to-blue-600 rounded-2xl blur-xl opacity-0 group-hover:opacity-15 transition duration-700" />
+
+      <div className="relative h-full p-8 rounded-2xl bg-white/[0.02] backdrop-blur-md overflow-hidden flex flex-col">
+        {/* Background Decorative "Noise" */}
+        <div className="absolute inset-0 opacity-[0.03] mix-blend-overlay pointer-events-none bg-[url('https://grainy-gradients.vercel.app/noise.svg')]" />
+
+        {/* Header Section */}
+        <div className="flex justify-between items-start mb-10">
+          <div className="relative">
+            <div className="absolute -inset-4 bg-purple-500/20 blur-2xl rounded-full opacity-0 group-hover:opacity-100 transition-opacity" />
+            <div className="relative p-4 rounded-xl bg-white/5 border border-white/10 text-purple-400 group-hover:scale-110 group-hover:text-white group-hover:bg-purple-600 transition-all duration-500">
+              <feature.icon size={28} strokeWidth={1.5} />
+            </div>
+          </div>
+          <span className="text-5xl font-black text-white/[0.03] group-hover:text-purple-500/10 transition-colors uppercase tracking-tighter">
+            0{index + 1}
+          </span>
         </div>
 
-        <h3 className="text-2xl font-bold text-white mb-4 tracking-tight group-hover:translate-x-1 transition-transform">
+        {/* Text Content */}
+        <h3 className="text-2xl font-black text-white uppercase italic tracking-tighter mb-4">
           {feature.title}
         </h3>
-
-        <p className="text-gray-500 text-base md:text-lg leading-relaxed group-hover:text-gray-300 transition-colors">
+        <p className="text-gray-400 text-sm leading-relaxed mb-10 flex-grow font-medium">
           {feature.description}
         </p>
-      </div>
 
-      {/* Index Badge */}
-      <div className="absolute bottom-6 right-8">
-        <span className="font-mono text-[10px] font-black text-white/10 group-hover:text-purple-500/40 transition-colors tracking-widest uppercase">
-          Module_0{index + 1}
-        </span>
+        {/* Status Bar Footer */}
+        <div className="relative pt-6 border-t border-white/5 mt-auto flex justify-between items-center">
+          <div className="flex flex-col">
+            <span className="text-[9px] font-bold uppercase tracking-[0.2em] text-gray-500">Security Level</span>
+            <span className="text-[11px] font-black uppercase text-blue-400">Class Alpha</span>
+          </div>
+
+          <div className="flex items-center gap-3">
+            <div className="h-1 w-12 bg-white/5 rounded-full overflow-hidden">
+              <motion.div
+                initial={{ x: "-100%" }}
+                whileInView={{ x: "100%" }}
+                transition={{ repeat: Infinity, duration: 2, ease: "linear" }}
+                className="h-full w-full bg-purple-500"
+              />
+            </div>
+            <div className="w-2 h-2 rounded-full bg-purple-500 shadow-[0_0_10px_#a855f7]" />
+          </div>
+        </div>
+
+        {/* Hover Highlight Shard */}
+        <div className="absolute top-0 right-0 w-24 h-24 bg-gradient-to-bl from-white/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
       </div>
     </motion.div>
   );

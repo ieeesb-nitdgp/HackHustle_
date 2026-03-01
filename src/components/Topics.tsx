@@ -8,48 +8,58 @@ import BlurText from "@/components/BlurText";
 export default function Topics() {
   const containerRef = useRef<HTMLElement>(null);
 
-  // Create a subtle parallax shift for the entire grid as you scroll
+  // Synchronized Scroll Tracking
   const { scrollYProgress } = useScroll({
     target: containerRef,
     offset: ["start end", "end start"],
   });
 
-  const yShift = useTransform(scrollYProgress, [0, 1], [20, -20]);
+  // Matching the subtle parallax feel from the About section
+  const backgroundScale = useTransform(scrollYProgress, [0, 0.5, 1], [0.8, 1.1, 1.2]);
+  const backgroundOpacity = useTransform(scrollYProgress, [0, 0.3, 0.7, 1], [0, 0.3, 0.3, 0]);
+  const yShift = useTransform(scrollYProgress, [0, 1], [40, -40]);
 
   return (
     <section
       id="topics"
       ref={containerRef}
-      className="relative py-32 bg-[#05010a] overflow-hidden"
+      className="relative py-24 md:py-40 bg-[#05010a] z-20 overflow-hidden"
     >
-      {/* 1. Background Grid Pattern */}
-      <div className="absolute inset-0 opacity-[0.03] pointer-events-none"
-        style={{ backgroundImage: `linear-gradient(#fff 1px, transparent 1px), linear-gradient(90deg, #fff 1px, transparent 1px)`, backgroundSize: '50px 50px' }}
+      {/* 1. Dynamic Background Atmosphere (MATCHES ABOUT.JSX) */}
+      <motion.div
+        className="absolute inset-0 z-0 pointer-events-none"
+        style={{
+          background: "radial-gradient(circle at 50% 50%, #9d50bb 0%, transparent 70%)",
+          scale: backgroundScale,
+          opacity: backgroundOpacity,
+        }}
       />
 
+      {/* 2. Subtle Grid overlay (MATCHES ABOUT.JSX) */}
+      <div className="absolute inset-0 opacity-[0.15] pointer-events-none bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:40px_40px]" />
+
       <div className="container relative z-10 mx-auto px-4">
-        {/* 2. Header with Precision */}
-        <div className="text-center mb-20">
-          <BlurText
-            text="Innovation Tracks"
-            className="text-4xl md:text-7xl font-black text-white tracking-tighter uppercase italic justify-center"
-            animateBy="words"
-            direction="top"
-          />
-          <motion.div
-            initial={{ width: 0 }}
-            whileInView={{ width: "100px" }}
-            className="h-1 bg-purple-600 mx-auto mt-4 mb-6"
-          />
-          <p className="text-gray-500 max-w-xl mx-auto text-sm md:text-base uppercase tracking-[0.3em] font-bold">
-            Select your domain. Build the future.
-          </p>
+
+        {/* 3. Section Header */}
+        <div className="flex flex-col md:flex-row justify-between items-end mb-20 md:mb-32 gap-8">
+          <div className="max-w-2xl text-left">
+            <BlurText
+              text="Innovation Tracks"
+              className="text-5xl md:text-8xl font-black text-white tracking-tighter uppercase italic leading-none"
+              animateBy="words"
+              direction="top"
+            />
+            <p className="text-purple-500 mt-6 text-xs md:text-sm uppercase tracking-[0.5em] font-bold">
+              // System Ready: Select Deployment Sector
+            </p>
+          </div>
+          <div className="hidden md:block h-[1px] flex-grow bg-gradient-to-r from-purple-500/50 to-transparent ml-10 mb-4" />
         </div>
 
-        {/* 3. The 3D Module Grid */}
+        {/* 4. The Grid with Parallax Shift */}
         <motion.div
           style={{ y: yShift }}
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto"
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8 max-w-7xl mx-auto"
         >
           {topics.map((topic, index) => (
             <TopicModule key={topic.title} topic={topic} index={index} />
@@ -60,60 +70,70 @@ export default function Topics() {
   );
 }
 
-/* --- Interactive Topic Module --- */
+/* --- TopicModule Component --- */
 
-interface Topic {
-  title: string;
-  description: string;
-  icon: React.ElementType;
-}
-
-function TopicModule({ topic, index }: { topic: Topic; index: number }) {
+function TopicModule({ topic, index }: { topic: any; index: number }) {
   return (
     <motion.div
-      initial={{ opacity: 0, y: 30 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.6, delay: index * 0.1 }}
+      initial={{ opacity: 0, scale: 0.9 }}
+      whileInView={{ opacity: 1, scale: 1 }}
+      transition={{ duration: 0.5, delay: index * 0.1 }}
       viewport={{ once: true }}
-      whileHover={{ y: -10 }}
-      className="group relative"
+      className="group relative h-full cursor-crosshair"
     >
-      {/* Glow Backplate */}
-      <div className="absolute -inset-0.5 bg-gradient-to-br from-purple-600 to-blue-600 rounded-2xl blur opacity-0 group-hover:opacity-20 transition duration-500" />
+      {/* Animated Border Beam */}
+      <div className="absolute inset-0 rounded-2xl border border-white/10 group-hover:border-purple-500/50 transition-colors duration-500" />
 
-      <div className="relative p-8 rounded-2xl bg-[#0a0a0c] border border-white/5 flex flex-col h-full transition-all duration-300 group-hover:border-white/20">
+      {/* Glow Effect */}
+      <div className="absolute -inset-1 bg-gradient-to-r from-purple-600 to-blue-600 rounded-2xl blur-xl opacity-0 group-hover:opacity-15 transition duration-700" />
 
-        {/* Index Number */}
-        <div className="absolute top-6 right-8 text-4xl font-black text-white/5 group-hover:text-purple-500/10 transition-colors">
-          0{index + 1}
-        </div>
+      <div className="relative h-full p-8 rounded-2xl bg-white/[0.02] backdrop-blur-md overflow-hidden flex flex-col">
+        {/* Background Decorative "Noise" */}
+        <div className="absolute inset-0 opacity-[0.03] mix-blend-overlay pointer-events-none bg-[url('https://grainy-gradients.vercel.app/noise.svg')]" />
 
-        {/* Icon & Track Header */}
-        <div className="flex items-center gap-4 mb-6">
-          <div className="p-3 rounded-xl bg-white/5 text-purple-400 group-hover:bg-purple-600 group-hover:text-white transition-all duration-500">
-            <topic.icon size={24} />
+        {/* Header Section */}
+        <div className="flex justify-between items-start mb-10">
+          <div className="relative">
+            <div className="absolute -inset-4 bg-purple-500/20 blur-2xl rounded-full opacity-0 group-hover:opacity-100 transition-opacity" />
+            <div className="relative p-4 rounded-xl bg-white/5 border border-white/10 text-purple-400 group-hover:scale-110 group-hover:text-white group-hover:bg-purple-600 transition-all duration-500">
+              <topic.icon size={28} strokeWidth={1.5} />
+            </div>
           </div>
-          <h3 className="text-xl font-bold text-white uppercase tracking-tight">
-            {topic.title}
-          </h3>
+          <span className="text-5xl font-black text-white/[0.03] group-hover:text-purple-500/10 transition-colors uppercase tracking-tighter">
+            0{index + 1}
+          </span>
         </div>
 
-        {/* Description */}
-        <p className="text-gray-400 text-sm leading-relaxed mb-8 flex-grow">
+        {/* Text Content */}
+        <h3 className="text-2xl font-black text-white uppercase italic tracking-tighter mb-4">
+          {topic.title}
+        </h3>
+        <p className="text-gray-400 text-sm leading-relaxed mb-10 flex-grow font-medium">
           {topic.description}
         </p>
 
-        {/* Tactical Footer */}
-        <div className="pt-6 border-t border-white/5 flex justify-between items-center">
-          <span className="text-[10px] font-black uppercase tracking-widest text-blue-500">
-            Track Active
-          </span>
-          <div className="flex gap-1">
-            <div className="w-1 h-1 rounded-full bg-purple-500 animate-pulse" />
-            <div className="w-1 h-1 rounded-full bg-purple-500 opacity-50" />
-            <div className="w-1 h-1 rounded-full bg-purple-500 opacity-20" />
+        {/* Status Bar Footer */}
+        <div className="relative pt-6 border-t border-white/5 mt-auto flex justify-between items-center">
+          <div className="flex flex-col">
+            <span className="text-[9px] font-bold uppercase tracking-[0.2em] text-gray-500">Security Level</span>
+            <span className="text-[11px] font-black uppercase text-blue-400">Class Alpha</span>
+          </div>
+
+          <div className="flex items-center gap-3">
+            <div className="h-1 w-12 bg-white/5 rounded-full overflow-hidden">
+              <motion.div
+                initial={{ x: "-100%" }}
+                whileInView={{ x: "100%" }}
+                transition={{ repeat: Infinity, duration: 2, ease: "linear" }}
+                className="h-full w-full bg-purple-500"
+              />
+            </div>
+            <div className="w-2 h-2 rounded-full bg-purple-500 shadow-[0_0_10px_#a855f7]" />
           </div>
         </div>
+
+        {/* Hover Highlight Shard */}
+        <div className="absolute top-0 right-0 w-24 h-24 bg-gradient-to-bl from-white/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
       </div>
     </motion.div>
   );

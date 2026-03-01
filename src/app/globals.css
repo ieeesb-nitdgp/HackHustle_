@@ -56,6 +56,12 @@
     --border: 240 3.7% 15.9%;
     --input: 240 3.7% 15.9%;
     --ring: 262.1 83.3% 57.8%;
+
+    /* Footer Specific Tokens */
+    --footer-bg: 263 80% 2%;
+    --footer-border: 240 10% 10%;
+    --footer-gradient-start: 270 70% 50%;
+    --footer-gradient-end: 210 100% 50%;
   }
 }
 
@@ -71,4 +77,47 @@
 
 .gradient-text {
   @apply bg-clip-text text-transparent bg-gradient-to-r from-primary to-secondary;
+}
+
+/* Footer Utility Classes */
+.footer-heading-underline {
+  position: relative;
+  display: inline-block;
+}
+
+.footer-heading-underline::after {
+  content: '';
+  position: absolute;
+  bottom: -8px;
+  left: 0;
+  width: 50px;
+  height: 3px;
+  background: linear-gradient(90deg, #9333ea, #2563eb);
+  border-radius: 3px;
+}
+
+.social-link-bubble {
+  @apply relative inline-flex items-center justify-center w-12 h-12 transition-all duration-300 z-10;
+}
+
+.social-link-bubble::before {
+  content: '';
+  @apply absolute top-1/2 left-1/2 w-0 h-0 bg-gradient-to-br from-purple-600 to-blue-600 rounded-full -translate-x-1/2 -translate-y-1/2 transition-all duration-300 -z-10;
+}
+
+.social-link-bubble:hover::before {
+  @apply w-[50px] h-[50px];
+}
+
+.footer-link-arrow {
+  @apply relative transition-all duration-300 hover:pl-5;
+}
+
+.footer-link-arrow::before {
+  content: '→';
+  @apply absolute left-[-20px] opacity-0 transition-all duration-300;
+}
+
+.footer-link-arrow:hover::before {
+  @apply opacity-100 left-0;
 }
