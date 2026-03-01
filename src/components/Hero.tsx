@@ -127,12 +127,31 @@ export default function Hero() {
             </div>
 
             {/* Interactive Partner Block */}
-            <div className="flex flex-col md:flex-row items-center gap-10 mb-16 opacity-60 hover:opacity-100 transition-opacity">
-              <Image src={ieeesb_logo_theme} alt="IEEE SB" className="h-10 md:h-14 w-auto grayscale hover:grayscale-0 transition-all duration-500" />
-              <div className="hidden md:block h-10 w-[1px] bg-white/10" />
-              <Image src={ieeeCs} alt="IEEE CS" className="h-12 md:h-16 w-auto grayscale hover:grayscale-0 transition-all duration-500" />
-            </div>
+            <div className="flex flex-col md:flex-row items-center gap-10 mb-16 
+                opacity-90 hover:opacity-100 transition-all duration-300">
 
+              <Image
+                src={ieeesb_logo_theme}
+                alt="IEEE SB"
+                className="h-20 md:h-16 w-auto 
+               brightness-110 contrast-125 
+               drop-shadow-[0_0_15px_rgba(255,255,255,0.15)]
+               hover:scale-105 transition-all duration-500 "
+              />
+
+              {/* Divider */}
+              <div className="hidden md:block h-12 w-[1px] 
+                  bg-gradient-to-b from-transparent via-purple-500/40 to-transparent" />
+
+              <Image
+                src={ieeeCs}
+                alt="IEEE CS"
+                className="h-20 md:h-16 w-auto 
+               brightness-200 contrast-125 
+               drop-shadow-[0_0_15px_rgba(168,85,247,0.3)]
+               hover:scale-105 transition-all duration-500 filter invert"
+              />
+            </div>
             {/* Action Matrix - Full-width on Mobile */}
             <div className="flex flex-col sm:flex-row gap-4 sm:gap-8 w-full sm:w-auto px-6 sm:px-0">
               <motion.button

@@ -15,7 +15,7 @@ export default function Timeline() {
       {/* 1. Background Layer (Consistent with Hero) */}
       <div className="absolute inset-0 z-0">
         <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:40px_40px] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_50%,#000_70%,transparent_100%)]" />
-        <Antigravity count={60} magnetRadius={150} color="#9d50bb" autoAnimate particleShape="capsule" />
+        <Antigravity count={30} magnetRadius={1000} color="#9d50bb" autoAnimate particleShape="circle" />
         <div className="absolute bottom-0 h-64 w-full bg-gradient-to-t from-[#05010a] to-transparent z-[1]" />
       </div>
 
@@ -69,7 +69,7 @@ export default function Timeline() {
                     ${isEven ? "left-0 -translate-x-1/2" : "right-0 translate-x-1/2"}`}
                   />
                   {/* Mobile Dot */}
-                  <div className="absolute w-3 h-3 rounded-full bg-purple-500 top-12 -left-[7.5px] md:hidden shadow-[0_0_10px_rgba(168,85,247,0.5)] z-20" />
+                  <div className="absolute w-3 h-3 rounded-full bg-purple-500 top-16 -left-[40.5px] md:hidden shadow-[0_0_10px_rgba(168,85,247,0.5)] z-20" />
                 </div>
 
                 {/* Content Column */}
@@ -86,9 +86,9 @@ export default function Timeline() {
                     <div className="absolute inset-0 rounded-2xl border border-white/10 group-hover:border-purple-500/50 transition-colors duration-500" />
 
                     {/* Glow Effect */}
-                    <div className="absolute -inset-1 bg-gradient-to-r from-purple-600 to-blue-600 rounded-2xl blur-xl opacity-0 group-hover:opacity-15 transition duration-700" />
+                    <div className="absolute -inset-1 bg-gradient-to-r from-purple-600 to-blue-600 rounded-2xl blur-xl opacity-0 group-hover:opacity-100 transition duration-700" />
 
-                    <div className="relative h-full p-8 rounded-2xl bg-white/[0.02] backdrop-blur-md overflow-hidden flex flex-col text-left">
+                    <div className="relative h-full p-8 rounded-2xl bg-[#1b0620]/80 border border-white/10 backdrop-blur-xl overflow-hidden flex flex-col text-left shadow-[0_0_30px_rgba(0,0,0,0.5)]">
                       {/* Background Decorative "Noise" */}
                       <div className="absolute inset-0 opacity-[0.03] mix-blend-overlay pointer-events-none bg-[url('https://grainy-gradients.vercel.app/noise.svg')]" />
 
