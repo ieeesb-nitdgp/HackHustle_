@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import { timeline } from "@/public/timeline";
 import BlurText from "@/components/BlurText";
 import Image from "next/image";
+import Link from "next/link";
 import Antigravity from "@/components/Antigravity";
 
 export default function Timeline() {
@@ -101,9 +102,12 @@ export default function Timeline() {
                           <span className="text-[11px] font-black uppercase text-blue-400">Deployed</span>
                         </div>
                         <div className="flex items-center gap-3">
-                          <button className="px-4 py-1.5 rounded-xl border border-white/10 text-white hover:bg-purple-600 transition-all duration-300 text-xs font-bold bg-white/5">
+                          <Link
+                            href="#about"
+                            className="px-4 py-1.5 rounded-xl border border-white/10 text-white hover:bg-purple-600 transition-all duration-300 text-xs font-bold bg-white/5 inline-block"
+                          >
                             Details &gt;
-                          </button>
+                          </Link>
                         </div>
                       </div>
 

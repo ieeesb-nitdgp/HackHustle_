@@ -114,10 +114,6 @@ function TopicModule({ topic, index }: { topic: any; index: number }) {
 
         {/* Status Bar Footer */}
         <div className="relative pt-6 border-t border-white/5 mt-auto flex justify-between items-center">
-          <div className="flex flex-col">
-            <span className="text-[9px] font-bold uppercase tracking-[0.2em] text-gray-500">Security Level</span>
-            <span className="text-[11px] font-black uppercase text-blue-400">Class Alpha</span>
-          </div>
 
           <div className="flex items-center gap-3">
             <div className="h-1 w-12 bg-white/5 rounded-full overflow-hidden">

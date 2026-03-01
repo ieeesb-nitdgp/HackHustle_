@@ -120,7 +120,7 @@ export default function Contact() {
                         <ContactInfoCard
                             icon={<Phone className="w-6 h-6" />}
                             title="Phone"
-                            details={["+91 7439 652 300", "+91 7439 133 972"]}
+                            details={["+91 6301641669", "+91 7439133972"]}
                             delay={0.3}
                         />
                     </div>
@@ -211,9 +211,36 @@ function ContactInfoCard({ icon, title, details, delay }: { icon: React.ReactNod
             </div>
             <div>
                 <h3 className="text-white font-bold text-lg mb-1">{title}</h3>
-                {details.map((line: string, i: number) => (
-                    <p key={i} className="text-gray-400 text-sm">{line}</p>
-                ))}
+                <div className="space-y-1">
+                    {details.map((item, index) => {
+                        const isPhone = item.startsWith("+");
+                        const isEmail = item.includes("@");
+
+                        const href = isPhone
+                            ? `tel:${item.replace(/\s/g, "")}`
+                            : isEmail
+                                ? `mailto:${item}`
+                                : null;
+
+                        return href ? (
+                            <a
+                                key={index}
+                                href={href}
+                                className="block text-gray-400 text-sm leading-relaxed 
+                                           hover:text-purple-400 transition-colors duration-300"
+                            >
+                                {item}
+                            </a>
+                        ) : (
+                            <p
+                                key={index}
+                                className="text-gray-400 text-sm leading-relaxed"
+                            >
+                                {item}
+                            </p>
+                        );
+                    })}
+                </div>
             </div>
         </motion.div>
     );
