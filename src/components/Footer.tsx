@@ -43,7 +43,7 @@ export default function Footer() {
             viewport={{ once: true }}
             className="space-y-6"
           >
-            <h3 className="text-3xl font-black text-white tracking-tighter italic">
+            <h3 className="text-2xl sm:text-3xl font-black text-white tracking-tighter italic uppercase">
               HACK<span className="text-purple-500">HUSTLE</span>
             </h3>
             <p className="text-gray-400 text-sm leading-relaxed max-w-xs">
@@ -61,7 +61,7 @@ export default function Footer() {
           >
             <BlurText
               text="Navigation"
-              className="text-xs font-bold uppercase tracking-[0.2em] text-blue-400"
+              className="text-[10px] sm:text-xs font-bold uppercase tracking-[0.3em] text-blue-400 font-mono"
               animateBy="letters"
               direction="bottom"
               delay={50}

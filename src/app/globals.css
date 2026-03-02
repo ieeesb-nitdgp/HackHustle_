@@ -2,8 +2,12 @@
 @tailwind components;
 @tailwind utilities;
 
-*{
-  font-family: "Space Grotesk", serif;
+@layer base {
+  :root {
+    --font-heading: var(--font-space-grotesk);
+    --font-body: var(--font-space-grotesk);
+    --font-mono: var(--font-geist-mono);
+  }
 }
 
 /* body {
@@ -71,7 +75,11 @@
   }
 
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground font-body;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-heading tracking-tighter;
   }
 }
 

@@ -42,7 +42,7 @@ export default function About() {
         <div className="text-center mb-20 md:mb-32">
           <BlurText
             text="The Spirit of HackHustle"
-            className="text-5xl md:text-7xl font-black text-white tracking-tighter mb-8 justify-center"
+            className="text-4xl sm:text-6xl md:text-7xl font-black text-white tracking-tighter mb-8 justify-center uppercase italic"
             animateBy="words"
             direction="bottom"
           />
@@ -53,7 +53,13 @@ export default function About() {
             viewport={{ once: true, margin: "-100px" }}
             className="relative"
           >
-            <p className="text-gray-400 max-w-3xl mx-auto text-lg md:text-2xl font-light leading-relaxed">
+            <BlurText
+              text="Witnessing the Biggest Event of IEEESBNITDGP"
+              className="text-4xl sm:text-6xl md:text-7xl font-black text-white tracking-tighter mb-8 justify-center  italic"
+              animateBy="words"
+              direction="bottom"
+            />
+            <p className="text-gray-400 max-w-3xl mx-auto text-base md:text-xl font-light leading-relaxed tracking-wide">
               HackHustle presents a dual-track innovation experience: a <span className="text-white font-medium">GenAI Hackathon</span> for intelligence and <span className="text-white font-medium">PCB Design</span> for hardware, converging to revolutionize Healthcare and Mental Health.
             </p>
           </motion.div>

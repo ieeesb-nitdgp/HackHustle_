@@ -95,9 +95,9 @@ export default function Contact() {
                         delay={100}
                         animateBy="words"
                         direction="bottom"
-                        className="text-4xl md:text-6xl font-black text-white mb-4 tracking-tighter justify-center uppercase italic"
+                        className="text-4xl sm:text-5xl md:text-6xl font-black text-white mb-4 tracking-tighter justify-center uppercase italic"
                     />
-                    <p className="text-gray-400 max-w-xl mx-auto text-lg">
+                    <p className="text-gray-400 max-w-xl mx-auto text-base md:text-lg tracking-wide">
                         Mahatma Gandhi Avenue, Durgapur, West Bengal, India
                     </p>
                 </motion.div>
@@ -133,7 +133,7 @@ export default function Contact() {
                         viewport={{ once: true }}
                         className="lg:col-span-3 p-8 md:p-10 rounded-[32px] bg-white/[0.03] border border-white/10 backdrop-blur-xl shadow-2xl"
                     >
-                        <h2 className="text-xl sm:text-2xl font-semibold text-white mb-6">Send a Message</h2>
+                        <h2 className="text-lg sm:text-xl font-bold text-white mb-6 uppercase tracking-wider italic">Send a Message</h2>
                         {submitStatus.type && (
                             <div
                                 className={`rounded-xl border p-3 sm:p-4 text-xs sm:text-sm mb-6 ${submitStatus.type === 'success'

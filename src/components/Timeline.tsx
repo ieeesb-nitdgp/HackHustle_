@@ -26,7 +26,7 @@ export default function Timeline() {
         <div className="text-center mb-24 relative">
           <BlurText
             text="Event Roadmap"
-            className="text-4xl md:text-7xl font-black text-white tracking-tighter uppercase italic justify-center pb-4"
+            className="text-4xl min-[400px]:text-5xl sm:text-6xl md:text-7xl font-black text-white tracking-tighter uppercase italic justify-center pb-4"
             animateBy="words"
             direction="bottom"
           />
@@ -75,9 +75,9 @@ export default function Timeline() {
 
                 {/* Content Column */}
                 <div className={`flex-1 p-5 md:p-12 ${isEven ? "md:text-right" : "md:text-left"}`}>
-                  <h2 className="text-2xl md:text-3xl font-black text-white mb-3 uppercase italic tracking-tight group">
+                  <h2 className="text-xl md:text-3xl font-black text-white mb-3 uppercase italic tracking-tight group">
                     {event.title}
-                    <span className="text-purple-400 text-xs tracking-[0.2em] ml-3 uppercase font-bold not-italic">
+                    <span className="text-purple-400 text-[10px] md:text-xs tracking-[0.2em] ml-3 uppercase font-bold not-italic font-mono">
                       // {event.location || "Online"}
                     </span>
                   </h2>

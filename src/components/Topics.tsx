@@ -45,11 +45,11 @@ export default function Topics() {
           <div className="max-w-2xl text-left">
             <BlurText
               text="Innovation Tracks"
-              className="text-5xl md:text-8xl font-black text-white tracking-tighter uppercase italic leading-none"
+              className="text-4xl min-[400px]:text-5xl sm:text-7vw md:text-8xl font-black text-white tracking-tighter uppercase italic leading-[0.9]"
               animateBy="words"
               direction="top"
             />
-            <p className="text-purple-500 mt-6 text-xs md:text-sm uppercase tracking-[0.5em] font-bold">
+            <p className="text-purple-500 mt-6 text-[10px] md:text-sm uppercase tracking-[0.4em] font-bold font-mono">
               // System Ready: Select Deployment Sector
             </p>
           </div>

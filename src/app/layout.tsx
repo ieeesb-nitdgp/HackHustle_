@@ -1,7 +1,13 @@
 import type { Metadata, Viewport } from "next";
 import { GeistSans } from "geist/font/sans";
 import { GeistMono } from "geist/font/mono";
+import { Space_Grotesk } from "next/font/google";
 import "./globals.css";
+
+const spaceGrotesk = Space_Grotesk({
+  subsets: ["latin"],
+  variable: "--font-space-grotesk",
+});
 
 export const metadata: Metadata = {
   title: "HackHustle | IEEE 24-Hour Hackathon",
@@ -19,8 +25,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className={`${GeistSans.variable} ${GeistMono.variable} scroll-smooth`}>
-      <body className={`${GeistSans.className} antialiased bg-[#05010a] text-white selection:bg-purple-500/30 selection:text-purple-200 overflow-x-hidden`}>
+    <html lang="en" className={`${spaceGrotesk.variable} ${GeistSans.variable} ${GeistMono.variable} scroll-smooth`}>
+      <body className={`${spaceGrotesk.className} antialiased bg-[#05010a] text-white selection:bg-purple-500/30 selection:text-purple-200 overflow-x-hidden`}>
 
         {/* Visual Noise Overlay (The "Hacker" Texture) */}
         <div className="fixed inset-0 z-[9999] pointer-events-none opacity-[0.03] mix-blend-overlay bg-[url('https://grainy-gradients.vercel.app/noise.svg')]" />
