@@ -40,12 +40,12 @@ export default function Topics() {
 
       <div className="container relative z-10 mx-auto px-4">
 
-        {/* 3. Section Header */}
-        <div className="flex flex-col md:flex-row justify-between items-end mb-20 md:mb-32 gap-8">
-          <div className="max-w-2xl text-left">
+        {/* 3. Section Header - Centered */}
+        <div className="flex flex-col items-center text-center mb-20 md:mb-32 gap-6">
+          <div className="max-w-4xl">
             <BlurText
               text="Innovation Tracks"
-              className="text-4xl min-[400px]:text-5xl sm:text-7vw md:text-8xl font-black text-white tracking-tighter uppercase italic leading-[0.9]"
+              className="text-4xl min-[400px]:text-5xl sm:text-7vw md:text-8xl font-black text-white tracking-tighter uppercase italic leading-[0.9] justify-center"
               animateBy="words"
               direction="top"
             />
@@ -53,7 +53,6 @@ export default function Topics() {
               // System Ready: Select Deployment Sector
             </p>
           </div>
-          <div className="hidden md:block h-[1px] flex-grow bg-gradient-to-r from-purple-500/50 to-transparent ml-10 mb-4" />
         </div>
 
         {/* 4. The Grid with Parallax Shift */}

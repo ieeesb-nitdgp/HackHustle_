@@ -60,7 +60,6 @@ export default function Navbar() {
             <span className="text-lg font-black tracking-tighter text-white uppercase italic">
               Hack<span className="text-blue-500">Hustle</span>
             </span>
-            <span className="text-[9px] font-black text-white/40 tracking-[0.2em] uppercase">NIT Durgapur</span>
           </div>
         </Link>
 

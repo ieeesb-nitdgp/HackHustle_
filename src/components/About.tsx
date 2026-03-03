@@ -54,8 +54,8 @@ export default function About() {
             className="relative"
           >
             <BlurText
-              text="Witnessing the Biggest Event of IEEESBNITDGP"
-              className="text-4xl sm:text-6xl md:text-7xl font-black text-white tracking-tighter mb-8 justify-center  italic"
+              text="WITNESSING THE BIGGEST EVENT OF IEEESBNITDGP"
+              className="text-4xl sm:text-6xl md:text-7xl font-black text-white tracking-tighter mb-8 justify-center italic uppercase"
               animateBy="words"
               direction="bottom"
             />

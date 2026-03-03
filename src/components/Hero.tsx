@@ -114,8 +114,7 @@ export default function Hero() {
               <h1 className="text-[2.5rem] min-[400px]:text-4xl sm:text-7xl md:text-[9rem] lg:text-[11rem] font-black leading-[0.85] tracking-tight text-white uppercase italic break-all sm:break-normal">
                 HACK<span className="text-transparent bg-clip-text bg-gradient-to-br from-white via-purple-500 to-blue-600 drop-shadow-[0_0_35px_rgba(168,85,247,0.3)]">HUSTLE</span>
               </h1>
-              {/* Year Stamp - Scaled & Repositioned for Mobile */}
-              <div className="absolute -top-6 -right-10 sm:-top-10 sm:-right-20 pointer-events-none opacity-10 sm:opacity-20 select-none">
+              <div className="absolute -top-6 right-0 sm:-top-10 sm:right-0 pointer-events-none opacity-10 sm:opacity-20 select-none">
                 <span className="text-[5rem] sm:text-[12rem] font-black text-white italic tracking-tighter">26</span>
               </div>
             </div>
