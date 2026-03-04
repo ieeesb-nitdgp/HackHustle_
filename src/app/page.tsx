@@ -13,7 +13,8 @@ import Speakers from "@/components/Speakers";
 import Timeline from "@/components/Timeline";
 import Topics from "@/components/Topics";
 import Loader from "@/components/Loader";
-
+import Partners from "@/components/Partners"
+import SubmitSection from "@/components/SubmitSection";
 export default function Home() {
   const [isLoading, setIsLoading] = useState(true);
 
@@ -36,10 +37,12 @@ export default function Home() {
           <Navbar />
           <Header />
           <About />
+          <SubmitSection />
           <Topics />
           <Timeline />
           <Speakers />
           <Prizes />
+          <Partners />
           <Faqs />
           <Contact />
           <Footer />

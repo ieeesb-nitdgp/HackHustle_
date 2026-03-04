@@ -1,12 +1,12 @@
 import ieee from "../public/ieee.png";
-import gdgKolkata from "../public/gdgKolkata.png";
+import gdgKolkata from "../public/GDGDURGAPUR.webp";
 import google from "../public/google.png";
 import devfolio from "../public/devfolio.png";
 import polygon from "../public/polygon.png";
 import filecoin from "../public/filecoin.png";
 import replit from "../public/replit.png";
 import solana from "../public/solana.png";
-
+import ieeecs from "../public/ieee-cs-logo.webp";
 export const partners = [
   {
     name: "Partner 1",
@@ -26,18 +26,6 @@ export const partners = [
   },
   {
     name: "Partner 5",
-    logo: polygon,
-  },
-  {
-    name: "Partner 6",
-    logo: filecoin,
-  },
-  {
-    name: "Partner 7",
-    logo: replit,
-  },
-  {
-    name: "Partner 8",
-    logo: solana,
+    logo: ieeecs,
   },
 ];

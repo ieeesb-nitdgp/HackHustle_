@@ -41,7 +41,7 @@ export default function Hero() {
       strings: [
         "Healthcare & Mental Health",
         "GenAI Hackathon & PCB Design", //
-        "7 March - 9 March",
+        "6 March - 8 March",
       ],
       typeSpeed: 50,
       backSpeed: 30,
