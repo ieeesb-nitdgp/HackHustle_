@@ -56,7 +56,7 @@ export default function Navbar() {
           >
             <Image src={LogoIcon} alt="Logo" width={28} height={28} className="w-7 h-7" />
           </motion.div>
-          <div className="flex flex-col leading-tight hidden sm:block">
+          <div className="flex flex-col leading-tight">
             <span className="text-lg font-black tracking-tighter text-white uppercase italic">
               Hack<span className="text-blue-500">Hustle</span>
             </span>
@@ -105,6 +105,7 @@ export default function Navbar() {
               transition={{ delay: 0.1 }}
               className="flex flex-col items-center gap-8 w-full"
             >
+              <NavLinks mobile setIsOpen={setIsOpen} />
               <Link
                 href="https://docs.google.com/forms/d/e/1FAIpQLScRVKpLp18DsDzfPH9_EAKHkFdeRHUi1075pfq-VAu9ja7_jw/viewform?usp=publish-editor"
                 target="_blank"
