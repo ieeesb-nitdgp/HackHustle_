@@ -71,7 +71,7 @@ export default function Navbar() {
         {/* CTA Section */}
         <div className="flex items-center gap-3">
           <Link
-            href="https://docs.google.com/forms/d/e/1FAIpQLScRVKpLp18DsDzfPH9_EAKHkFdeRHUi1075pfq-VAu9ja7_jw/viewform?usp=publish-editor"
+            href="https://docs.google.com/forms/d/e/1FAIpQLSf_jv_0xgVFv8pLRCRt2tlZBiZglnIq42hr-_5PMq9YYQ07BQ/viewform?usp=dialog"
             target="_blank"
             className="hidden md:flex group relative bg-white text-black hover:bg-white rounded-full font-bold px-8 py-3 overflow-hidden transition-all duration-300 active:scale-95 items-center gap-2"
           >
@@ -107,11 +107,11 @@ export default function Navbar() {
             >
               <NavLinks mobile setIsOpen={setIsOpen} />
               <Link
-                href="https://docs.google.com/forms/d/e/1FAIpQLScRVKpLp18DsDzfPH9_EAKHkFdeRHUi1075pfq-VAu9ja7_jw/viewform?usp=publish-editor"
+                href="https://docs.google.com/forms/d/e/1FAIpQLSf_jv_0xgVFv8pLRCRt2tlZBiZglnIq42hr-_5PMq9YYQ07BQ/viewform?usp=dialog"
                 target="_blank"
                 className="w-full max-w-xs bg-blue-600 hover:bg-blue-500 text-white rounded-full py-5 text-xl font-black shadow-[0_10px_30px_rgba(59,130,246,0.5)] text-center transition-all active:scale-95"
               >
-                JOIN THE HUSTLE
+                Register in HackHustle
               </Link>
             </motion.div>
           </motion.div>

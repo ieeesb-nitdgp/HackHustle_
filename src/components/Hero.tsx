@@ -155,7 +155,7 @@ export default function Hero() {
             {/* Action Matrix - Full-width on Mobile */}
             <div className="flex flex-col sm:flex-row gap-4 sm:gap-8 w-full sm:w-auto px-6 sm:px-0">
               <Link
-                href="https://docs.google.com/forms/d/e/1FAIpQLScRVKpLp18DsDzfPH9_EAKHkFdeRHUi1075pfq-VAu9ja7_jw/viewform?usp=publish-editor"
+                href="https://docs.google.com/forms/d/e/1FAIpQLSf_jv_0xgVFv8pLRCRt2tlZBiZglnIq42hr-_5PMq9YYQ07BQ/viewform?usp=dialog"
                 target="_blank"
                 className="flex-shrink-0"
               >
@@ -164,21 +164,8 @@ export default function Hero() {
                   className="relative h-14 sm:h-16 px-8 sm:px-12 rounded-full bg-white text-black font-black uppercase tracking-tighter italic flex items-center justify-center group overflow-hidden text-sm sm:text-base w-full sm:w-auto"
                 >
                   <div className="absolute inset-0 bg-purple-600 translate-y-full group-hover:translate-y-0 transition-transform duration-300" />
-                  <span className="relative z-10 group-hover:text-white transition-colors">Apply for AI Hackathon</span>
+                  <span className="relative z-10 group-hover:text-white transition-colors">Register in HackHustle</span>
                   <ArrowRight className="relative z-10 ml-3 w-4 h-4 sm:w-5 sm:h-5 group-hover:translate-x-2 transition-transform" />
-                </motion.button>
-              </Link>
-
-              <Link
-                href="https://docs.google.com/forms/d/e/1FAIpQLSf4sFfq2_gYHyfNH8wF8HXwcnSSofaV2XUOPdheBTM_GoeHtg/viewform?usp=publish-editor"
-                target="_blank"
-                className="flex-shrink-0"
-              >
-                <motion.button
-                  whileHover={{ scale: 1.05, border: "1px solid rgba(168,85,247,0.5)" }}
-                  className="h-14 sm:h-16 px-8 sm:px-12 rounded-full border border-white/10 bg-white/[0.03] backdrop-blur-xl text-white font-black uppercase tracking-tighter italic flex items-center justify-center hover:bg-white hover:text-black transition-all text-sm sm:text-base w-full sm:w-auto"
-                >
-                  Apply for PCB Track
                 </motion.button>
               </Link>
             </div>
