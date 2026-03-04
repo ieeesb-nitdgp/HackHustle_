@@ -12,11 +12,18 @@ const spaceGrotesk = Space_Grotesk({
 export const metadata: Metadata = {
   title: "HackHustle | IEEE 24-Hour Hackathon",
   description: "Code. Compete. Conquer. The ultimate 24-hour innovation marathon.",
+  manifest: "/manifest.json",
+  appleWebApp: {
+    capable: true,
+    statusBarStyle: "default",
+    title: "HackHustle",
+  },
 };
 
 export const viewport: Viewport = {
   width: "device-width",
   initialScale: 1,
+  themeColor: "#05010a",
 };
 
 export default function RootLayout({
