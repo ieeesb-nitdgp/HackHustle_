@@ -2,7 +2,7 @@ export const faqs = [
   {
     question: "Who can participate?",
     answer:
-      "Anyone who is passionate about technology and innovation can participate. Whether you're a student, professional, or hobbyist developer, you're welcome to join!",
+      "All 1st and 2nd year students from any college across the country are eligible to participate. However, for NIT Durgapur, only 1st year students are eligible.",
   },
   {
     question: "What's the team size?",
@@ -12,7 +12,7 @@ export const faqs = [
   {
     question: "Is it free to participate?",
     answer:
-      "Yes, participation is completely free! We provide all the necessary resources, including meals, workspace, and internet.",
+      "Yes, participation is completely free!",
   },
   {
     question: "What should I bring?",

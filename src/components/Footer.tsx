@@ -4,9 +4,7 @@ import { motion } from "framer-motion";
 import Link from "next/link";
 import {
   Facebook,
-  Github,
   Instagram,
-  Twitter,
   Linkedin,
   MapPin,
   Mail,
@@ -17,9 +15,7 @@ import BlurText from "@/components/BlurText";
 export default function Footer() {
   const socialLinks = [
     { name: "Facebook", icon: <Facebook size={18} />, href: "https://www.facebook.com/nitdgpieeesociety", color: "hover:bg-[#1877f2]", brand: "bg-[#1877f2]" },
-    { name: "Twitter", icon: <Twitter size={18} />, href: "https://x.com/", color: "hover:bg-[#222222]", brand: "bg-[#222222]" },
     { name: "Instagram", icon: <Instagram size={18} />, href: "https://www.instagram.com/ieeesb_nitdgp/", color: "hover:bg-[#e4405f]", brand: "bg-[#e4405f]" },
-    { name: "Github", icon: <Github size={18} />, href: "https://github.com/", color: "hover:bg-[#333333]", brand: "bg-[#333333]" },
     { name: "Linkedin", icon: <Linkedin size={18} />, href: "https://www.linkedin.com/company/ieeesbnitdgp/", color: "hover:bg-[#0077b5]", brand: "bg-[#0077b5]" },
   ];
 
@@ -137,7 +133,7 @@ export default function Footer() {
             className="space-y-6"
           >
             <BlurText
-              text="Headquarters"
+              text="Venue"
               className="text-xs font-bold uppercase tracking-[0.2em] text-blue-400"
               animateBy="letters"
               direction="bottom"
@@ -163,7 +159,7 @@ export default function Footer() {
         {/* Bottom Bar */}
         <div className="pt-8 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-6">
           <p className="text-gray-500 text-[10px] uppercase tracking-widest text-center md:text-left">
-            © 2025 HackHustle. Crafted with <span className="text-red-500 animate-pulse">❤️</span> by IEEE SB NITD
+            © 2026 HackHustle. Crafted with <span className="text-red-500 animate-pulse">❤️</span> by IEEE SB NITD
           </p>
 
           <button
