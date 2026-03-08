@@ -65,7 +65,7 @@ export default function SubmitSection() {
                         {/* Premium Call to Action Button */}
                         <div className="flex flex-col items-center">
                             <a
-                                href="https://hackhustle-3.devfolio.co/"
+                                href="https://drive.google.com/drive/folders/1AOc0ySC8dHIVcdyd72y_9AtnIVh2YRi7?dmr=1&ec=wgc-drive-%5Bmodule%5D-goto"
                                 target="_blank"
                                 rel="noopener noreferrer"
                                 className="inline-block group relative"
@@ -83,7 +83,7 @@ export default function SubmitSection() {
                                     <div className="absolute inset-0 bg-gradient-to-r from-purple-600 to-blue-600 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
 
                                     <span className="relative z-10 text-white font-black text-xl md:text-2xl uppercase italic tracking-tighter">
-                                        Submit Now on Devfolio
+                                        Submit Now on Google Drive
                                     </span>
                                     <ArrowRight className="relative z-10 text-white group-hover:translate-x-2 transition-transform duration-500" size={28} />
                                 </motion.button>
